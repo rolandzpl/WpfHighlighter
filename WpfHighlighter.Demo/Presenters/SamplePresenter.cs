@@ -50,16 +50,4 @@ namespace WpfHighlighter.Demo.Presenters
             get { return viewModel; }
         }
     }
-
-    public static class CollectionExtensions
-    {
-        public static ICollection<T> AddRange<T>(this ICollection<T> _this, IEnumerable<T> items)
-        {
-            foreach (var i in items)
-            {
-                _this.Add(i);
-            }
-            return _this;
-        }
-    }
 }
