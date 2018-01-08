@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SearchHighlight.Wpf.Searching;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using WpfHighlighter.Demo.ViewModels;
@@ -29,37 +30,18 @@ namespace WpfHighlighter.Demo.Presenters
         {
             if (e.PropertyName == nameof(SampleViewModel.SearchText))
             {
+                var matcher = new Matcher();
                 var st = viewModel.SearchText;
                 foreach (var l in viewModel.Lines)
                 {
                     var matches = new List<LineMatch>();
                     if (!string.IsNullOrWhiteSpace(st))
                     {
-                        matches.AddRange(GetMatches(nameof(l.FirstName), l.FirstName, st));
-                        matches.AddRange(GetMatches(nameof(l.LastName), l.LastName, st));
+                        matches.AddRange(matcher.GetMatches(nameof(l.FirstName), l.FirstName, st));
+                        matches.AddRange(matcher.GetMatches(nameof(l.LastName), l.LastName, st));
                     }
                     l.Matches = matches;
                 }
-            }
-        }
-
-        private IEnumerable<LineMatch> GetMatches(string propertyName, string text, string searchText)
-        {
-            var startFrom = 0;
-            while (true)
-            {
-                var idx = text.IndexOf(searchText, startFrom, StringComparison.InvariantCultureIgnoreCase);
-                if (idx == -1)
-                {
-                    break;
-                }
-                yield return new LineMatch()
-                {
-                    PropertyName = propertyName,
-                    Start = idx,
-                    End = idx + searchText.Length
-                };
-                startFrom = idx + searchText.Length;
             }
         }
 

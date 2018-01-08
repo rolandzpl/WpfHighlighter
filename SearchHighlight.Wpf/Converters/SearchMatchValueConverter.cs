@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SearchHighlight.Wpf.Searching;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -6,11 +7,10 @@ using System.Windows;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Media;
-using WpfHighlighter.Demo.ViewModels;
 
 namespace WpfHighlighter.Demo.Converters
 {
-    class SearchMatchValueConverter : IMultiValueConverter
+    public class SearchMatchValueConverter : IMultiValueConverter
     {
         public static DependencyProperty MatchesProperty =
             DependencyProperty.RegisterAttached("Matches", typeof(IEnumerable<LineMatch>),

@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfHighlighter.Demo", "WpfHighlighter.Demo\WpfHighlighter.Demo.csproj", "{963443A0-FCA6-4A09-B75B-BBC8CBA16207}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchHighlight.Wpf", "SearchHighlight.Wpf\SearchHighlight.Wpf.csproj", "{C9CC6F3F-A882-489F-B082-6708D3076772}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{963443A0-FCA6-4A09-B75B-BBC8CBA16207}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{963443A0-FCA6-4A09-B75B-BBC8CBA16207}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{963443A0-FCA6-4A09-B75B-BBC8CBA16207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9CC6F3F-A882-489F-B082-6708D3076772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9CC6F3F-A882-489F-B082-6708D3076772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9CC6F3F-A882-489F-B082-6708D3076772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9CC6F3F-A882-489F-B082-6708D3076772}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

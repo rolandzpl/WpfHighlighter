@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using SearchHighlight.Wpf.Searching;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
