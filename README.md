@@ -74,3 +74,30 @@ Below you can see a xaml fragment of the demo project:
 </Window>
 
 ````
+
+Presenter _SamplePresenter_ used to drive the view has method OnPropertyChanged bound to
+view model's _PropertyChanged_ event. So it is raised every time the property in 
+the view model changes. Thus, when _SearchText_ in that view model changes, 
+the following code runs to handle new search text and to recompute matches passed to 
+the converter:
+
+````c#
+private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+{
+    if (e.PropertyName == nameof(SampleViewModel.SearchText))
+    {
+        var matcher = new Matcher();
+        var st = viewModel.SearchText;
+        foreach (var l in viewModel.Lines)
+        {
+            var matches = new List<LineMatch>();
+            if (!string.IsNullOrWhiteSpace(st))
+            {
+                matches.AddRange(matcher.GetMatches(nameof(l.FirstName), l.FirstName, st));
+                matches.AddRange(matcher.GetMatches(nameof(l.LastName), l.LastName, st));
+            }
+            l.Matches = matches;
+        }
+    }
+}
+````
